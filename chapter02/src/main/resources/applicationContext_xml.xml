@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                           http://www.springframework.org/schema/beans/spring-beans.xsd 
+                           http://www.springframework.org/schema/context  
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd 
+        ">
+    
+    <bean id="sgtPeppers" class="com.lyn0801.xml.SgtPeppers"/>
+    <bean id="blankDisc" class="com.lyn0801.xml.BlankDisc">
+<!--        <constructor-arg value="===Sgt. Pepper's Lonely Hearts Club Band==="></constructor-arg>
+        <constructor-arg value="The Beatles"></constructor-arg>
+        <constructor-arg><null/></constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Butter</value>
+                <value>Fixing a Hole</value>
+            </list>
+        </constructor-arg>-->
+        <property name="title" value="===Sgt. Pepper's Lonely Hearts Club Band==="></property>
+        <property name="artist" value="The Beatles"></property>
+        <property name="tracks" ref="trackList">
+<!--            <list>
+                <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+                <value>With a Little Help from My Friends</value>
+                <value>Lucy in the Sky with Diamonds</value>
+                <value>Getting Butter</value>
+                <value>Fixing a Hole</value>
+            </list>-->
+        </property>
+    </bean>
+    <bean id="discography" class="com.lyn0801.xml.Discography">
+        <constructor-arg value="The Beatles"></constructor-arg>
+        <constructor-arg>
+            <list>
+                <ref bean="sgtPeppers"></ref>
+                <ref bean="blankDisc"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="cdPlayer" class="com.lyn0801.xml.CDPlayer">
+        <!--<constructor-arg ref="discography"></constructor-arg>-->
+        <property name="compactDisc" ref="discography"></property>
+    </bean>
+    <util:list id="trackList">
+        <value>Sgt. Pepper's Lonely Hearts Club Band</value>
+        <value>With a Little Help from My Friends</value>
+        <value>Lucy in the Sky with Diamonds</value>
+        <value>Getting Butter</value>
+        <value>Fixing a Hole</value>
+    </util:list>
+</beans>

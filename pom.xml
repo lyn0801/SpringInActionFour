@@ -10,5 +10,6 @@
     </properties>
   <modules>
     <module>chapter02</module>
+    <module>chapter04</module>
   </modules>
 </project>

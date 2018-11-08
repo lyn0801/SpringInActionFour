@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                           http://www.springframework.org/schema/beans/spring-beans.xsd 
+                           http://www.springframework.org/schema/context  
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd 
+        ">
+    
+    <bean id="sgtPeppers" class="com.lyn0801.xml.SgtPeppers"/>
+    <import resource="cd-config.xml"></import>
+    <bean id="discography" class="com.lyn0801.xml.Discography">
+        <constructor-arg value="The Beatles"></constructor-arg>
+        <constructor-arg>
+            <list>
+                <ref bean="sgtPeppers"></ref>
+                <ref bean="compactDisc"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="cdPlayer" class="com.lyn0801.xml.CDPlayer">
+        <!--<constructor-arg ref="discography"></constructor-arg>-->
+        <property name="compactDisc" ref="discography"></property>
+    </bean>
+</beans>
