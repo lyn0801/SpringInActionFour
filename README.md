@@ -44,66 +44,66 @@
 ##### <bean id="..." class="...."/>
 #### 2.4.3 借助构造器注入初始化 bean
 ##### 构造器注入 bean 引用
-##### <bean id="..." class="....">
-#####    <constructor-arg ref="..."/>
-##### </bean>
+###### <bean id="..." class="....">
+######    <constructor-arg ref="..."/>
+###### </bean>
 ##### 将字面量注入到构造器中
-##### <bean id="..." class="....">
-#####    <constructor-arg value="..."/>
-#####    <constructor-arg value="..."/>
-##### </bean>
+###### <bean id="..." class="....">
+######    <constructor-arg value="..."/>
+######    <constructor-arg value="..."/>
+###### </bean>
 ##### 装配集合
-##### <bean id="..." class="....">
-#####    <constructor-arg value="..."/>
-#####    <constructor-arg value="..."/>
-#####    <constructor-arg><null/></constructor-arg>
-##### </bean>
-##### 
-##### <bean id="..." class="....">
-#####    <constructor-arg value="..."/>
-#####    <constructor-arg value="..."/>
-#####    <constructor-arg>
-#####       <list>
-#####          <value>...</value>
-#####          <value>...</value>
-#####       </list>
-#####    </constructor-arg>
-##### </bean>
-##### 
-##### <bean id="..." class="....">
-#####    <constructor-arg value="..."/>
-#####    <constructor-arg value="..."/>
-#####    <constructor-arg>
-#####       <list>
-#####          <ref bean="..."/>
-#####          <ref bean="..."/>
-#####       </list>
-#####    </constructor-arg>
-##### </bean>
+###### <bean id="..." class="....">
+######    <constructor-arg value="..."/>
+######    <constructor-arg value="..."/>
+######    <constructor-arg><null/></constructor-arg>
+###### </bean>
+###### 
+###### <bean id="..." class="....">
+######    <constructor-arg value="..."/>
+######    <constructor-arg value="..."/>
+######    <constructor-arg>
+######       <list>
+######          <value>...</value>
+######          <value>...</value>
+######       </list>
+######    </constructor-arg>
+###### </bean>
+###### 
+###### <bean id="..." class="....">
+######    <constructor-arg value="..."/>
+######    <constructor-arg value="..."/>
+######    <constructor-arg>
+######       <list>
+######          <ref bean="..."/>
+######          <ref bean="..."/>
+######       </list>
+######    </constructor-arg>
+###### </bean>
 #### 2.4.4 设置属性(类必须有默认构造函数)
 ##### <bean id="..." class="...">
 #####    <property name="..." ref="..."/>
 ##### </bean>
 ##### 将字面量注入到属性中
-##### <bean id="..." class="....">
-#####    <property name="..." value="..."/>
-#####    <property name="..." value="..."/>
-#####    <property name="...">
-#####       <list>
-#####          <value>...</value>
-#####          <value>...</value>
-#####       </list>
-#####    </property>
-##### </bean>
-##### 
-##### <bean id="..." class="....">
-#####    <property name="..." value="..."/>
-#####    <property name="..." value="..."/>
-#####    <util:list id="...">
-#####       <value>...</value>
-#####       <value>...</value>
-#####    </util:list>
-##### </bean>
+###### <bean id="..." class="....">
+######    <property name="..." value="..."/>
+######    <property name="..." value="..."/>
+######    <property name="...">
+######       <list>
+######          <value>...</value>
+######          <value>...</value>
+######       </list>
+######    </property>
+###### </bean>
+###### 
+###### <bean id="..." class="....">
+######    <property name="..." value="..."/>
+######    <property name="..." value="..."/>
+######    <util:list id="...">
+######       <value>...</value>
+######       <value>...</value>
+######    </util:list>
+###### </bean>
 ### 2.5 导入和混合配置
 #### 2.5.1 在 JavaConfig 中引用 XML 配置
 ##### @Import(class)
@@ -155,7 +155,7 @@
 ##### @Component
 ##### @Primary
 ##### public class IceCream implements Dessert { ... }
-##### 
+###### 
 ##### @Bean
 ##### @Primary
 ##### public Dessert iceCream() {
@@ -170,46 +170,46 @@
 #####    this.dessert = dessert;
 ##### }
 ##### 创建自定义的限定符
-##### @Component
-##### @Qualifier("cold")
-##### public class IceCream implements Dessert { ... }
-##### 
-##### @Autowired
-##### @Qualifier("cold")
-##### public void setDessert(Dessert dessert) {
-#####    this.dessert = dessert;
-##### }
-##### 
-##### @Bean
-##### @Qualifier("cold")
-##### public Dessert iceCream() {
-#####    return new IceCream();
-##### }
+###### @Component
+###### @Qualifier("cold")
+###### public class IceCream implements Dessert { ... }
+###### 
+###### @Autowired
+###### @Qualifier("cold")
+###### public void setDessert(Dessert dessert) {
+######    this.dessert = dessert;
+###### }
+###### 
+###### @Bean
+###### @Qualifier("cold")
+###### public Dessert iceCream() {
+######    return new IceCream();
+###### }
 ##### 使用自定义的限定符注解
-##### @Target({ElementType.CONSTRUCTOR, ElementType.FIELD,
-#####          ElementType.METHOD, ElementType.TYPE})
-##### @Retention(RetentionPolicy.RUNTIME)
-##### @Qualifier
-##### public @interface Cold { }
-##### 
-##### @Target({ElementType.CONSTRUCTOR, ElementType.FIELD,
-#####          ElementType.METHOD, ElementType.TYPE})
-##### @Retention(RetentionPolicy.RUNTIME)
-##### @Qualifier
-##### public @interface Creamy { }
-##### 
-##### @Component
-##### @Cold
-##### @Creamy
-##### public class IceCream implements Dessert { ... }
-##### 
-##### @Autowired
-##### @Cold
-##### @Creamy
-##### public void setDessert(Dessert dessert) {
-#####    this.dessert = dessert;
-##### }
-##### 
+###### @Target({ElementType.CONSTRUCTOR, ElementType.FIELD,
+######          ElementType.METHOD, ElementType.TYPE})
+###### @Retention(RetentionPolicy.RUNTIME)
+###### @Qualifier
+###### public @interface Cold { }
+###### 
+###### @Target({ElementType.CONSTRUCTOR, ElementType.FIELD,
+######          ElementType.METHOD, ElementType.TYPE})
+###### @Retention(RetentionPolicy.RUNTIME)
+###### @Qualifier
+###### public @interface Creamy { }
+###### 
+###### @Component
+###### @Cold
+###### @Creamy
+###### public class IceCream implements Dessert { ... }
+###### 
+###### @Autowired
+###### @Cold
+###### @Creamy
+###### public void setDessert(Dessert dessert) {
+######    this.dessert = dessert;
+###### }
+###### 
 ### 3.4 bean 的作用域
 #### 单例（ Singleton ）：在整个应用中，只创建 bean 的一个实例。
 #### 原型（ Prototype ）：每次注入或者通过 Spring 应用上下文获取的时候，都会创建一个新的 bean 实例。
@@ -245,66 +245,66 @@
 #### 属性占位符（ Property placeholder ）。
 #### Spring 表达式语言（ SpEL ）。
 ##### 3.5.1 注入外部的值
-##### @PropertySource 引用了类路径中一个名为 app.properties 的文件。
-##### @PropertySource("classpath:/com/soundsystem/app.properties")
-##### @Autowired
-##### Environment env;
-##### @Bean
-##### public BlankDisc disc() {
-#####    return new BlankDisc(env.getProperty("disc.title"), env.getProperty("disc.artist"));
-##### }
-##### 在 Spring 装配中，占位符的形式为使用 “${... }” 包装的属性名称。
-##### <bean id="sgtPeppers" class="soundsystem.BlankDisc" c:_title="${disc.title}" c:_artist="${disc.artist}" />
-##### public BlankDisc(
-#####    @Value("${disc.title}") String title,
-#####    @Value("${disc.artist}") String artist) {
-#####    this.title = title;
-#####    this.artist = artist;
-##### }
-##### 为了使用占位符，我们必须要配置一个 PropertyPlaceholderConfigurer bean 或 PropertySourcesPlaceholderConfigurer bean 。
-##### @Bean
-##### public PropertySourcesPlaceholderConfigurer getPropertyPlaceholderConfigurer() {
-#####    PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-#####    ClassPathResource classPathResource = new ClassPathResource("com/lyn0801/app.properties");
-#####    propertySourcesPlaceholderConfigurer.setLocations(classPathResource);
-#####    propertySourcesPlaceholderConfigurer.setLocalOverride(true);
-#####    return propertySourcesPlaceholderConfigurer;
-##### }
-##### 使用 XML 配置<context:property-placeholder location="..."/>
+###### @PropertySource 引用了类路径中一个名为 app.properties 的文件。
+###### @PropertySource("classpath:/com/soundsystem/app.properties")
+###### @Autowired
+###### Environment env;
+###### @Bean
+###### public BlankDisc disc() {
+######    return new BlankDisc(env.getProperty("disc.title"), env.getProperty("disc.artist"));
+###### }
+###### 在 Spring 装配中，占位符的形式为使用 “${... }” 包装的属性名称。
+###### <bean id="sgtPeppers" class="soundsystem.BlankDisc" c:_title="${disc.title}" c:_artist="${disc.artist}" />
+###### public BlankDisc(
+######    @Value("${disc.title}") String title,
+######    @Value("${disc.artist}") String artist) {
+######    this.title = title;
+######    this.artist = artist;
+###### }
+###### 为了使用占位符，我们必须要配置一个 PropertyPlaceholderConfigurer bean 或 PropertySourcesPlaceholderConfigurer bean 。
+###### @Bean
+###### public PropertySourcesPlaceholderConfigurer getPropertyPlaceholderConfigurer() {
+######    PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+######    ClassPathResource classPathResource = new ClassPathResource("com/lyn0801/app.properties");
+######    propertySourcesPlaceholderConfigurer.setLocations(classPathResource);
+######    propertySourcesPlaceholderConfigurer.setLocalOverride(true);
+######    return propertySourcesPlaceholderConfigurer;
+###### }
+###### 使用 XML 配置<context:property-placeholder location="..."/>
 ##### 3.5.2 使用 Spring 表达式语言进行装配
-##### SpEL 表达式要放到 “#{ ... }”
-##### #{T(System).currentTimeMillis()}  T() 表达式会将 java.lang.System 视为 Java 中对应的类型，因此可以调用其 static 修饰的 currentTimeMillis() 方法。
-##### public BlankDisc(
-#####    @Value("#{systemProperties['disc.title']}") String title,
-#####    @Value("#{systemProperties['disc.artist']}") String artist) {
-#####    this.title = title;
-#####    this.artist = artist;
-##### }
-##### 
-##### <bean id="sgtPeppers" class="soundsystem.BlankDisc" c:_title="#{systemProperties['disc.title']}" c:_artist="#{systemProperties['disc.artist']}" />
-##### 
-##### #{3.14159} 
-##### #{'Hello'} 
-##### #{false} 
-##### #{sgtPeppers} 
-##### #{sgtPeppers.artist} 
-##### #{artistSelector.selectArtist()} 
-##### #{artistSelector.selectArtist().toUpperCase()}
-##### #{artistSelector.selectArtist()?.toUpperCase()}
-##### T(java.lang.Math)
-##### T(java.lang.Math).PI
-##### T(java.lang.Math).random()
-##### #{2 * T(java.lang.Math).PI * circle.radius}
-##### #{disc.title + ' by ' + disc.artist}
-##### #{counter.total == 100} or #{counter.total eq 100}
-##### #{scoreboard.score > 1000 ? "Winner!" : "Loser"}
-##### #{disc.title ?: 'Rattle and Hum'}
-##### #{admin.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com'}
-##### #{jukebox.songs[4].title}
-##### #{'This is a test'[3]}
-##### 查询运算符（ .?[] ），它会用来对集合进行过滤，得到集合的一个子集。#{jukebox.songs.?[artist eq 'Aerosmith']}
-##### #{jukebox.songs.^[artist eq 'Aerosmith']}  “.^[]” 和 “.$[]” ，它们分别用来在集合中查询第一个匹配项和最后一个匹配项。
-##### #{jukebox.songs.![title]} 投影运算符（ .![] ），它会从集合的每个成员中选择特定的属性放到另外一个集合中。
+###### SpEL 表达式要放到 “#{ ... }”
+###### #{T(System).currentTimeMillis()}  T() 表达式会将 java.lang.System 视为 Java 中对应的类型，因此可以调用其 static 修饰的 currentTimeMillis() 方法。
+###### public BlankDisc(
+######    @Value("#{systemProperties['disc.title']}") String title,
+######    @Value("#{systemProperties['disc.artist']}") String artist) {
+######    this.title = title;
+######    this.artist = artist;
+###### }
+###### 
+###### <bean id="sgtPeppers" class="soundsystem.BlankDisc" c:_title="#{systemProperties['disc.title']}" c:_artist="#{systemProperties['disc.artist']}" />
+###### 
+###### #{3.14159} 
+###### #{'Hello'} 
+###### #{false} 
+###### #{sgtPeppers} 
+###### #{sgtPeppers.artist} 
+###### #{artistSelector.selectArtist()} 
+###### #{artistSelector.selectArtist().toUpperCase()}
+###### #{artistSelector.selectArtist()?.toUpperCase()}
+###### T(java.lang.Math)
+###### T(java.lang.Math).PI
+###### T(java.lang.Math).random()
+###### #{2 * T(java.lang.Math).PI * circle.radius}
+###### #{disc.title + ' by ' + disc.artist}
+###### #{counter.total == 100} or #{counter.total eq 100}
+###### #{scoreboard.score > 1000 ? "Winner!" : "Loser"}
+###### #{disc.title ?: 'Rattle and Hum'}
+###### #{admin.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com'}
+###### #{jukebox.songs[4].title}
+###### #{'This is a test'[3]}
+###### 查询运算符（ .?[] ），它会用来对集合进行过滤，得到集合的一个子集。#{jukebox.songs.?[artist eq 'Aerosmith']}
+###### #{jukebox.songs.^[artist eq 'Aerosmith']}  “.^[]” 和 “.$[]” ，它们分别用来在集合中查询第一个匹配项和最后一个匹配项。
+###### #{jukebox.songs.![title]} 投影运算符（ .![] ），它会从集合的每个成员中选择特定的属性放到另外一个集合中。
 ## 第4章　面向切面的 Spring
 ### 4.1 什么是面向切面编程
 #### 4.1.1 定义 AOP 术语
