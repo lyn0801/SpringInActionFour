@@ -7,11 +7,7 @@ package com.lyn0801.java;
  */
 
 
-import com.lyn0801.autowired.CompactDisc;
-import com.lyn0801.autowired.SgtPeppers;
-import com.lyn0801.autowired.CDPlayer;
-import com.lyn0801.autowired.SgtPeppersClone;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.lyn0801.CompactDisc;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,13 +23,8 @@ public class CDPlayerConfig {
         return new SgtPeppers();
     }
     
-    @Bean
-    public CompactDisc sgtPeppersClone(){
-        return new SgtPeppersClone();
-    }
-    
     @Bean 
-    public CDPlayer cdPlayer(@Qualifier("sgtPeppersClone") CompactDisc compactDisc){
-        return new CDPlayer(compactDisc);
+    public CDPlayer cdPlayer(){
+        return new CDPlayer(sgtPeppers());
     }
 }

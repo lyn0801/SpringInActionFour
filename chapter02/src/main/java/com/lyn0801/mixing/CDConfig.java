@@ -5,8 +5,7 @@
  */
 package com.lyn0801.mixing;
 
-import com.lyn0801.autowired.CompactDisc;
-import com.lyn0801.autowired.SgtPeppers;
+import com.lyn0801.CompactDisc;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class CDConfig {
-    @Bean
+    @Bean(name="compactDisc")
     public CompactDisc sgtPeppers(){
         return new SgtPeppers();
     } 

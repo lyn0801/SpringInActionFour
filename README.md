@@ -24,7 +24,7 @@
 ##### @Named("...")
 #### 2.2.3 设置组件扫描的基础包
 ##### @ComponentScan("...")
-##### @ComponentScan(basePackages="...","...")
+##### @ComponentScan(basePackages={"...","..."})
 ##### @ComponentScan(basePackageClasses{CDPlayer.class,DVDPlayer.class})
 #### 2.2.4 通过为 bean 添加注解实现自动装配
 ##### 构造器上添加了 @Autowired 注解，这表明当 Spring 创建 bean 的时候，会通过这个构造器来进行实例化。

@@ -1,4 +1,4 @@
-package com.lyn0801.autowired;
+package com.lyn0801;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

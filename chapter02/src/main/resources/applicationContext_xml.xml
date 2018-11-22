@@ -26,7 +26,7 @@
                 <value>Fixing a Hole</value>
             </list>
         </constructor-arg>-->
-        <property name="title" value="===Sgt. Pepper's Lonely Hearts Club Band==="></property>
+        <property name="title" value="[[[Sgt. Pepper's Lonely Hearts Club Band]]]"></property>
         <property name="artist" value="The Beatles"></property>
         <property name="tracks" ref="trackList">
 <!--            <list>

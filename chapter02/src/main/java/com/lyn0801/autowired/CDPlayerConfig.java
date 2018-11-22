@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author lyn0801
  */
-@Configuration
-@ComponentScan
+//@Configuration
+//@ComponentScan
 //@ComponentScan("com.lyn0801.autowired")
 //@ComponentScan(basePackages={"com.lyn0801.autowired"})
 //@ComponentScan(basePackageClasses={SgtPeppers.class})

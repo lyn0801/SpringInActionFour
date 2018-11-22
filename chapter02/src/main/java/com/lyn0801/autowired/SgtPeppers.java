@@ -7,6 +7,7 @@ package com.lyn0801.autowired;
  */
 
 
+import com.lyn0801.CompactDisc;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
  * @author lyn0801
  */
 @Component("sgtPeppers")
-public class SgtPeppers implements CompactDisc{
+public class SgtPeppers implements CompactDisc {
     private String title = "***Sgt. Pepper's Lonely Hearts Club Band***";
     private String artist = "The Beatles";
 

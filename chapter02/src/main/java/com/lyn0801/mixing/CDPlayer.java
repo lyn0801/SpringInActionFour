@@ -1,4 +1,4 @@
-package com.lyn0801.autowired;
+package com.lyn0801.mixing;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,26 +15,21 @@ import org.springframework.stereotype.Component;
  *
  * @author lyn0801
  */
-@Component
 public class CDPlayer {
-    private CompactDisc cd;
+    private CompactDisc compactDisc;
 
-//    @Autowired
-//    public CDPlayer(CompactDisc cd) {
-//        this.cd = cd;
-//    }
-    
-//    @Autowired
-//    public void setCompactDisc(CompactDisc cd){
-//        this.cd = cd;
-//    }
-    
-    @Autowired
-    public void insertDisc(CompactDisc cd){
-        this.cd = cd;
+    public CDPlayer() {
     }
-    
+
+    public CDPlayer(CompactDisc compactDisc) {
+        this.compactDisc = compactDisc;
+    }
+
+    public void setCompactDisc(CompactDisc compactDisc) {
+        this.compactDisc = compactDisc;
+    }
+
     public void play(){
-        cd.play();
+        compactDisc.play();
     }
 }

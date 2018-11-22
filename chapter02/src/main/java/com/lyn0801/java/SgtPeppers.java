@@ -1,4 +1,4 @@
-package com.lyn0801.xml;
+package com.lyn0801.java;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -6,14 +6,15 @@ package com.lyn0801.xml;
  * and open the template in the editor.
  */
 
+
 import com.lyn0801.CompactDisc;
 
 /**
  *
  * @author lyn0801
  */
-public class SgtPeppers implements CompactDisc{
-    private String title = "###Sgt. Pepper's Lonely Hearts Club Band###";
+public class SgtPeppers implements CompactDisc {
+    private String title = "===Sgt. Pepper's Lonely Hearts Club Band===";
     private String artist = "The Beatles";
 
     @Override

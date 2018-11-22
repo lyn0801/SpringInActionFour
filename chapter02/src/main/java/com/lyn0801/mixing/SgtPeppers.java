@@ -1,4 +1,4 @@
-package com.lyn0801.autowired;
+package com.lyn0801.mixing;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -7,15 +7,14 @@ package com.lyn0801.autowired;
  */
 
 
-import org.springframework.stereotype.Component;
+import com.lyn0801.CompactDisc;
 
 /**
  *
  * @author lyn0801
  */
-@Component("sgtPeppersClone")
-public class SgtPeppersClone implements CompactDisc{
-    private String title = "******Sgt. Pepper's Lonely Hearts Club Band******";
+public class SgtPeppers implements CompactDisc {
+    private String title = "%==Sgt. Pepper's Lonely Hearts Club Band==%";
     private String artist = "The Beatles";
 
     @Override

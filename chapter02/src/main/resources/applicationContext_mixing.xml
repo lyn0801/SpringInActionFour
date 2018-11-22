@@ -11,20 +11,10 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util.xsd 
         ">
-    
-    <bean id="sgtPeppers" class="com.lyn0801.xml.SgtPeppers"/>
-    <import resource="cd-config.xml"></import>
-    <bean id="discography" class="com.lyn0801.xml.Discography">
-        <constructor-arg value="The Beatles"></constructor-arg>
-        <constructor-arg>
-            <list>
-                <ref bean="sgtPeppers"></ref>
-                <ref bean="compactDisc"></ref>
-            </list>
-        </constructor-arg>
-    </bean>
-    <bean id="cdPlayer" class="com.lyn0801.xml.CDPlayer">
-        <!--<constructor-arg ref="discography"></constructor-arg>-->
-        <property name="compactDisc" ref="discography"></property>
+    <!--<import resource="cd-config.xml"></import>-->
+    <bean class="com.lyn0801.mixing.CDConfig"/>
+    <bean id="cdPlayer" class="com.lyn0801.mixing.CDPlayer">
+        <constructor-arg ref="compactDisc"></constructor-arg>
+        <!--<property name="compactDisc" ref="compactDisc"></property>-->
     </bean>
 </beans>

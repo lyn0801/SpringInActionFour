@@ -6,7 +6,7 @@ package com.lyn0801.xml;
  * and open the template in the editor.
  */
 
-import com.lyn0801.autowired.CompactDisc;
+import com.lyn0801.CompactDisc;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

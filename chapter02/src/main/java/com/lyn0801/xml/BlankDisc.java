@@ -5,7 +5,7 @@
  */
 package com.lyn0801.xml;
 
-import com.lyn0801.autowired.CompactDisc;
+import com.lyn0801.CompactDisc;
 import java.util.List;
 
 /**
