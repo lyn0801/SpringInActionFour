@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class CDConfig {
-    @Bean(name="compactDisc")
-    public CompactDisc sgtPeppers(){
+    @Bean
+    public CompactDisc compactDisc(){
         return new SgtPeppers();
     } 
 }
