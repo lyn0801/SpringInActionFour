@@ -15,7 +15,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author lyn0801
  */
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy//启用自动代理
 @ComponentScan
 public class ConcertConfig {
 
