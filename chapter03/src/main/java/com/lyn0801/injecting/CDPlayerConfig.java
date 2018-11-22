@@ -22,11 +22,11 @@ public class CDPlayerConfig {
     public CompactDisc sgtPeppers() {
 //        return new SgtPeppers();
         return new BlankDisc(
-                "Sgt. Pepper's Lonely Hearts Club Band",
+                "***Sgt. Pepper's Lonely Hearts Club Band***",
                 "The Beatles");
     }
-    
-    @Bean 
+
+    @Bean
     public CDPlayer cdPlayer(CompactDisc compactDisc){
         return new CDPlayer(compactDisc);
     }

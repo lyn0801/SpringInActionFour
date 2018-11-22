@@ -22,7 +22,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes=ExpressiveConfig.class)
 public class CDPlayerTest {
     @Autowired
-//    @Qualifier("sgtPeppers")
     private CompactDisc cd;
     
     @Autowired

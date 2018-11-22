@@ -144,7 +144,7 @@
 #####    <servlet-name>appServlet</servlet-name>
 #####    <url-pattern>/</url-pattern>
 ##### </servlet-mapping>
-#####  @ActiveProfiles 注解,指定运行测试时要激活哪个 profile 
+##### @ActiveProfiles 注解,指定运行测试时要激活哪个 profile 
 ### 3.2 条件化的 bean
 #### @Conditional 注解,用到带有 @Bean 注解的方法上。如果给定的条件计算结果为 true ，就会创建这个 bean ，否则的话，这个 bean 会被忽略。
 #### 设置给 @Conditional 的类可以是任意实现了 Condition 接口的类型。可以看出来，这个接口实现起来很简单直接，只需提供 matches() 方法的实现即可。

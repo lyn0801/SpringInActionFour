@@ -22,8 +22,8 @@ import org.springframework.core.io.ClassPathResource;
 //@PropertySource("classpath:/com/lyn0801/app.properties")
 public class ExpressiveConfig {
 
-//    @Autowired
-//    Environment env;
+    @Autowired
+    Environment env;
 
 //    @Bean
 //    public BlankDisc disc() {
@@ -36,7 +36,7 @@ public class ExpressiveConfig {
     public BlankDisc disc(@Value("${disc.title}") String title, @Value("${disc.artist}") String artist) {
         return new BlankDisc(title, artist);
     }
-    
+
     @Bean
     public PropertySourcesPlaceholderConfigurer getPropertyPlaceholderConfigurer() {
         PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
@@ -45,8 +45,8 @@ public class ExpressiveConfig {
         propertySourcesPlaceholderConfigurer.setLocalOverride(true);
         return propertySourcesPlaceholderConfigurer;
     }
-    
-    @Bean 
+
+    @Bean
     public CDPlayer cdPlayer(CompactDisc compactDisc){
         return new CDPlayer(compactDisc);
     }
